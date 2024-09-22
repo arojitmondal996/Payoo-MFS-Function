@@ -3,7 +3,18 @@ document.getElementById('btn-cash-out')
     event.preventDefault();
 
     const cashOut = getInputFieldValueById('input-cash-out');
+    console.log(cashOut)
     const pinNumber = getInputFieldValueById('input-cash-out-pin');
 
-    console.log('inside the click handler', cashOut, pinNumber);
+    // console.log('inside the click handler', cashOut, pinNumber);
+
+    if(pinNumber === 1234){
+        const balance = getTextFieldValueById('account-balance');
+        console.log('balance here', balance)
+        const newBalance = balance - cashOut;
+        document.getElementById('account-balance').innerText = newBalance; 
+    }
+    else{
+        alert('No money for you.....DGM.')
+    }
 })
